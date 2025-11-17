@@ -1,3 +1,5 @@
+"use strict";
+
 class BUI_TABLE_ROW extends HTMLElement {
   static observedAttributes = ["row-data", "row-seperator"];
 
@@ -59,30 +61,29 @@ class BUI_TABLE extends HTMLElement {
 
   connectedCallback() {
     this._parseAttributes();
-    
+
     setTimeout(() => {
       this._rows = Array.from(this.querySelectorAll("bui-table-row"));
       this.render();
     }, 0);
-    
+
     this._observeRows();
   }
 
   _observeRows() {
     const observer = new MutationObserver(() => {
       this._rows = Array.from(this.querySelectorAll("bui-table-row"));
-      this.render()
-    })
+      this.render();
+    });
 
     observer.observe(this, {
-      childList: true
-    })
+      childList: true,
+    });
   }
 
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    // console.log(name, oldValue, newValue);
-  }
+  // attributeChangedCallback(name, oldValue, newValue) {
+  // console.log(name, oldValue, newValue);
+  // }
 
   _parseAttributes() {
     this._columnSeperator = this.getAttribute("column-seperator") || ",";
