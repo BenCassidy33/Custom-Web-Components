@@ -2,8 +2,6 @@
 
 Inspired by shadcn/ui, designed to be used with plain HTML and minimal JavaScript. (Work in progress)
 
----
-
 Components Implemented:
 
 | Component | Implemented?  |
