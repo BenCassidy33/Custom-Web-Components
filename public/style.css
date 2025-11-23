@@ -1,4 +1,5 @@
 @import url("http://localhost:3000/themes/slate.css");
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 html {
 	display: flex;
@@ -12,13 +13,23 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-family: monospace;
+	font-family: "JetBrains Mono", monospace;
 	background-color: var(--bg-main);
 	color: var(--text-color);
 }
 
 #heading-text {
 	color: "#FFFFFF";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	margin-bottom: 7vh;
+}
+
+#heading-text > a {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 #heading-text > h1 {
@@ -32,7 +43,6 @@ body {
 
 #welcome-text {
 	margin-top: 10vh;
-	margin-bottom: 10vh;
 	font-size: 5vh;
 	text-align: center;
 }
@@ -49,6 +59,7 @@ body {
 	padding-top: 3%;
 	padding-bottom: 3%;
 	border: 1px solid var(--border-color);
+	width: 40%;
 }
 
 #link-builder > h3 {
@@ -89,10 +100,41 @@ body {
 }
 
 #copy-button:active {
-    transform: scale(0.9);
+	transform: scale(0.9);
 }
-
 
 #component-picker {
 	margin-top: 50px;
+}
+
+.contentblock {
+    margin-bottom: 50px;
+}
+
+.textbox {
+	width: 40%;
+	margin-bottom: 30px;
+	background-color: var(--bg-surface);
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 3%;
+	padding-top: 3%;
+	border-radius: var(--rounding);
+	border: 1px solid var(--border-color);
+	cursor:default;
+}
+
+.textbox-header {
+	font-size: 32px;
+	font-weight: 600;
+	margin-bottom: 5%;
+}
+
+.textbox-content {
+	font-size: 18px;
+}
+
+.textbox-content > a {
+	cursor: pointer;
+    text-decoration: underline;
 }

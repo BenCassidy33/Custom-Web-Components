@@ -9,6 +9,11 @@ function build_link(components, min = false) {
 const link_text = document.getElementById("link-text");
 const component_picker = document.getElementById("component-picker");
 const copy_button = document.getElementById("copy-button");
+const quick_start = document.getElementById("quick-start")
+const link_builder = document.getElementById("link-builder")
+
+quick_start.addEventListener("click", () => {
+    link_builder.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });})
 
 copy_button.addEventListener("click", () => {
 	navigator.clipboard.writeText(link_text.innerText);
