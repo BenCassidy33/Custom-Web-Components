@@ -2,27 +2,24 @@
 
 "use strict";
 
-import "./navbar.css";
-
 class BUI_NAVBAR extends HTMLElement {
 	static observedAttributes = [];
 
 	constructor() {
 		super();
+		const shadow = this.attachShadow({ mode: "open" });
+
+		const style = document.createElement("style");
+		style.textContent = css;
+		shadow.appendChild(style);
+
+        console.log("section rendered:", this.innerHTML);
+		const slot = document.createElement("slot");
+        shadow.appendChild(slot)
 	}
 
 	connectedCallback() {
 		this._internals = this.attachInternals();
-
-		this._left = this.querySelector("bui-navbar-left");
-		this._right = this.querySelector("bui-navbar-right");
-		this._center = this.querySelector("bui-navbar-right");
-	}
-
-	render() {
-		// const left = this._left !== null ? this._left.render() : ""
-		// const center = this._center !== null ? this._center.render() : ""
-		// const right = this._right !== null ? this._right.render() : ""
 	}
 }
 
@@ -42,6 +39,5 @@ class BUI_NAVBAR_SECTION extends HTMLElement {
 	}
 }
 
-
 customElements.define("bui-navbar", BUI_NAVBAR);
-customElements.define("bui-navbar-left", BUI_NAVBAR_SECTION);
+customElements.define("bui-navbar-section", BUI_NAVBAR_SECTION);

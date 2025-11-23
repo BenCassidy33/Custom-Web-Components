@@ -1,7 +1,5 @@
 "use strict";
 
-import "./sidebar.css";
-
 class BUI_SIDEBAR_SECTION extends HTMLELement {
 	static observedAttributes = ["collapsible"];
 
