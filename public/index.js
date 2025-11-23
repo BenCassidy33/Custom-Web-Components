@@ -4,8 +4,8 @@ function build_link(components, min = false) {
             <span>&lt</span><span style="color: var(--code-keyword);">script</span><span style="color: var(--code-attribute);"> src</span><span>=</span><span style="color: var(--code-string);">"http://localhost:3000/dist/?components=${components}&minify=${min}"</span><span>&gt&lt/</span><span style="color: var(--code-keyword);">script</span><span>&gt</span>
             <br>
             <span>&lt</span><span style="color: var(--code-keyword);">link</span>
-            <span style="color: var(--code-attribute);"> rel</span><span>=</span><span style="color: var(--code-string);">"stylesheet"</span>
-            <span style="color: var(--code-attribute);"> href</span><span>=</span>
+            <span style="color: var(--code-attribute);">rel</span><span>=</span><span style="color: var(--code-string);">"stylesheet"</span>
+            <span style="color: var(--code-attribute);">href</span><span>=</span>
             <span style="color: var(--code-string);">"http://localhost:3000/dist/?components=${components}"</span>
             <span>&gt</span>>
         </code            
