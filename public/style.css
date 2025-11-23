@@ -62,9 +62,18 @@ body {
 	width: 40%;
 }
 
-#link-builder > h3 {
+#link-builder-header > h3{
 	font-size: 32px;
+    margin-bottom: 10px;
 }
+
+#link-builder-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
 
 #link-container {
 	display: flex;
@@ -73,6 +82,8 @@ body {
 	border-radius: var(--rounding);
 	width: fit-content;
 	height: 5vh;
+    width: fit-content;
+    padding: 5px;
 }
 
 #link-text {
