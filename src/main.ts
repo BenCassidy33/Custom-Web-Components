@@ -33,6 +33,7 @@ export async function parse_items_request(
 
 interface QueryParams {
 	components?: string;
+	styles?: string;
 	minify?: string;
 }
 
@@ -49,7 +50,7 @@ async function main() {
 
 	app.get(
 		"/dist",
-		({ query }: { query: QueryParams }) => {
+		async ({ query }: { query: QueryParams }) => {
 			const components = query.components;
 
 			if (components === undefined) {
@@ -58,7 +59,7 @@ async function main() {
 				);
 			}
 
-			return bundle_components(
+			return await bundle_components(
 				query.components!,
 				query.minify?.toLowerCase() === "true" ? true : false,
 			);
@@ -71,8 +72,7 @@ async function main() {
 			throw new Error("Error, styles must be defined in uri path!");
 		}
 
-		let styles = await bundle_styles(query.styles);
-		return styles;
+		return await bundle_styles(query.styles);
 	});
 
 	app.get(
@@ -90,6 +90,10 @@ async function main() {
 			});
 		},
 	);
+
+	app.get("/favicon.ico", () => {
+        return Bun.file("./public/logo.png")
+	});
 
 	app.listen(3000, () => {
 		console.log("Server running on port 3000");

@@ -7,15 +7,8 @@ class BUI_NAVBAR extends HTMLElement {
 
 	constructor() {
 		super();
-		const shadow = this.attachShadow({ mode: "open" });
-
-		const style = document.createElement("style");
-		style.textContent = css;
-		shadow.appendChild(style);
-
-        console.log("section rendered:", this.innerHTML);
-		const slot = document.createElement("slot");
-        shadow.appendChild(slot)
+		// const shadow = this.attachShadow({ mode: "open" });
+		//       shadow.appendChild(slot)
 	}
 
 	connectedCallback() {
